@@ -16,3 +16,11 @@ axios
   .catch((error) => {
     console.error("Error fetching images:", error);
   });
+
+  const VisitorAPI=function(t,e,a){var s=new XMLHttpRequest;s.onreadystatechange=function(){var t;s.readyState===XMLHttpRequest.DONE&&(200===(t=JSON.parse(s.responseText)).status?e(t.data):a(t.status,t.result))},s.open("GET","https://api.visitorapi.com/api/?pid="+t),s.send(null)};
+
+  VisitorAPI(
+    "TfjTP0pmySVZ9W4TVzIf",
+    function(data){console.log(data)},
+    function(errorCode, errorMessage){console.log(errorCode, errorMessage)}
+);
